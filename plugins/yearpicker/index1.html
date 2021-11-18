@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>yearpicker.js</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta property="og:title" content="Jquery yearpicker.js plugin by saravanajd" />
+    <meta property="og:locale" content="en_IN" />
+    <meta name="description"
+      content="YearPicker.js is a lightweight yet configurable yearpicker for jQuery that makes it easy to select a year from a popup similar to the date picker. This plugin allows you to easily customaize the YearPicker the way you want it to." />
+    <meta property="og:description"
+      content="YearPicker.js is a lightweight yet configurable yearpicker for jQuery that makes it easy to select a year from a popup similar to the date picker. This plugin allows you to easily customaize the YearPicker the way you want it to." />
+    <link rel="canonical" href="https://saravanajd.github.io/YearPicker/index.html" />
+    <meta property="og:url" content="https://saravanajd.github.io/YearPicker/index.html" />
+    <meta property="og:site_name" content="yearpicker.js" />
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-139967706-1"></script>
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="page-content">
+      <section id="usage">
+        <h3>Basic Usage</h3>
+        <p class="intro"> The basic use of yearpicker.js plugin with a related javascript code </p>
+        <div class="row">
+          <div class="col-3">
+            <strong>Examples</strong>
+            <div class="form-group">
+              <input type="text" class="yearpicker form-control" value="" />
+            </div>
+          </div>
+          <div class="col-9" style="padding: 0 1rem;">
+            <strong>Code</strong>
+            <pre class="pre">
+$(".yearpicker").yearpicker()</pre>
+          </div>
+        </div>
+      </section>
+      <section id="Events">
+        <h3>Events</h3>
+        <p class="intro"> YearPicker allows you to invokes a function like on value changed, onShow, onHide. </p>
+        <div class="row">
+          <div class="col-3">
+            <strong>Examples</strong>
+            <div class="form-group">
+              <input id="example2" type="text" class="form-control" value="" />
+            </div>
+          </div>
+          <div class="col-9" style="padding: 0 1rem;">
+            <div>
+              <strong>Selected Value</strong>
+              <div style="
+                        background: #f6f8fa;
+                        padding: 0 1rem;
+                        margin-bottom: 0.5rem;
+                      ">
+                <div id="OutputContainer"> - </div>
+              </div>
+              <strong>Code:</strong>
+              <pre class="pre">
+$(".yearpicker").yearpicker({
+  onChange : function(value){
+    // YOUR CODE COMES_HERE
+  }
+});</pre>
+              <script src="jquery.min.js"></script>
+              <script src="core.js"></script>
+              <link rel="stylesheet" href="yearpicker.css" />
+              <script src="yearpicker.js"></script>
+              <script>
+                $(document).ready(function () {
+                  $(".yearpicker").yearpicker({
+                    startYear: new Date().getFullYear() - 10,
+                    endYear: new Date().getFullYear() + 10,
+                  });
+                  $("#example2").yearpicker({
+                    startYear: new Date().getFullYear() - 10,
+                    endYear: new Date().getFullYear() + 10,
+                    onChange: function (value) {
+                      $('#OutputContainer').html(value);
+                    }
+                  });
+                });
+              </script>
+  </body>
+
+</html>
